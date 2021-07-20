@@ -21,14 +21,18 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the authentification server.' })
 })
 
+// routes
+require('./app/routes/auth.routes')(app)
+require('./app/routes/user.routes')(app)
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`)
 })
 
-const db = require('./auth-server/models')
-const dbConfig = require('./auth-server/configs/db.config.js')
+const db = require('./app/models')
+const dbConfig = require('./app/configs/db.config.js')
 
 db.mongoose
   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
