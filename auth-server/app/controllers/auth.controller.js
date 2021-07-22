@@ -1,7 +1,6 @@
 const config = require('../configs/auth.config')
 const db = require('../models')
 const User = db.user
-// const Account = db.account
 
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')

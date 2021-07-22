@@ -1,0 +1,13 @@
+@media all and (min-width: 480px) {
+    .Logout {
+      padding: 60px 0;
+    }
+
+    .logout-button, .logout-button:hover{
+      width: auto;
+      margin: 0;
+      color: #B8F2E6;
+      background-color: #5E6472;
+      border-color: #5E6472;
+    }
+  }
