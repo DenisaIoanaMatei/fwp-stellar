@@ -19,15 +19,19 @@ export default function Login () {
     AuthService.login(email, password)
       .then(
         (res) => {
-          history.push('/account')
-          window.location.reload()
+          if (res.status !== 200) {
+            alert(res.data.message)
+            window.location.reload()
+          } else {
+            history.push('/account')
+            window.location.reload()
+          }
         }
       )
       .catch(
         (error) => {
-          const resMessage = error.toString()
-          setMessage(resMessage)
-          alert(message)
+          console.log(error)
+          alert(error)
         }
       )
   }
