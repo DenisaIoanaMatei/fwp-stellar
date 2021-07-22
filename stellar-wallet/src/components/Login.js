@@ -9,7 +9,6 @@ export default function Login () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory()
-  const [message, setMessage] = useState('')
 
   function validateForm () {
     return email.length > 0 && email.includes('@') > 0 && password.length > 0
