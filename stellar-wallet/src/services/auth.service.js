@@ -10,7 +10,10 @@ const signup = (username, email, password) => {
       password
     })
     .then((response) => {
-      return response.data
+      return response
+    })
+    .catch((err) => {
+      return(err.response)
     })
 }
 
@@ -24,8 +27,11 @@ const login = (email, password) => {
       if (response.data.accessToken) {
         localStorage.setItem('user', JSON.stringify(response.data))
       }
-
-      return response.data
+      
+      return response
+    })
+    .catch((err) => {
+      return(err.response)
     })
 }
 
