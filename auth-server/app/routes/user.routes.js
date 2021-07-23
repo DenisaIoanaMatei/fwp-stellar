@@ -1,4 +1,5 @@
-const { authJwt } = require('../middlewares')
+const { checkForAccounts } = require('../middlewares')
+const { authJwt } = require("../middlewares")
 const controller = require('../controllers/user.controller')
 
 module.exports = function (app) {
@@ -10,7 +11,7 @@ module.exports = function (app) {
     next()
   })
 
-  app.get('/api/test/all', controller.allAccess)
-
-  app.get('/api/test/user', [authJwt.verifyToken], controller.userBoard)
+  app.post('/api/data/accounts', [authJwt.verifyToken ], controller.saveAccount)
+  
+  app.get('/api/data/accounts', [authJwt.verifyToken, checkForAccounts.checkForExistingAccounts], controller.getAccounts)
 }
