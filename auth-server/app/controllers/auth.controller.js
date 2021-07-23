@@ -52,8 +52,6 @@ exports.signin = (req, res) => {
         expiresIn: 86400 // 24 hours
       })
 
-      // hier muss wahrscheinlich das mit den Accounts rein
-      // mal testen
       const accountsForAuthenticatedUser = []
 
       for (let i = 0; i < user.accounts.length; i++) {
