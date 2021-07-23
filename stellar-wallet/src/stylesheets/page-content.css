@@ -10,6 +10,7 @@
     }
 
     .card {
+      margin-bottom: 30px;
       height: auto;
       background-color: #FFA69E;
       border-color: #FFA69E;
