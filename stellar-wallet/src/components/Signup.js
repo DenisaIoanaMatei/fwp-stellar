@@ -31,9 +31,9 @@ export default function Signup () {
     AuthService.signup(fields.username, fields.email, fields.password)
       .then(
         (res) => {
-          console.log(res.message)
+          console.log(res.data.message)
           setNewUser(false)
-          setMessage(res.message.toString())
+          setMessage(res.data.message.toString())
         }
       )
       .catch(
