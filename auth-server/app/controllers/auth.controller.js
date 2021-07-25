@@ -52,16 +52,11 @@ exports.signin = (req, res) => {
         expiresIn: 86400 // 24 hours
       })
 
-      const accountsForAuthenticatedUser = []
-
-      for (let i = 0; i < user.accounts.length; i++) {
-        accountsForAuthenticatedUser.push('Account_' + user.accounts[i].pub_key.toUpperCase())
-      }
       res.status(200).send({
         id: user._id,
         username: user.username,
         email: user.email,
-        accounts: accountsForAuthenticatedUser,
+        accounts: user.accounts,
         accessToken: token
       })
     })
