@@ -70,16 +70,12 @@ exports.saveAccount = (req, res) => {
         if (!user) {
           return res.status(404).send({ message: 'No User found. Could not update accounts[] for UserNo.' })
         }
-        
-        const newAccount = {
-          accountId: acc._id,
-          pub_key: acc.pub_key,
-          sub_key: acc.sec_key
-        }
-        user.accounts.push(newAccount)
+
+        user.accounts.push({accountId: acc._id, pub_key: acc.pub_key})
+        user.save()
       })
 
-    res.send({ message: 'Account was saved and User updated successfully!' })
+    res.send({ message: 'Account was saved and User updated successfully!', accountId: acc._id, pub_key: acc.pub_key })
   })
 }
   
