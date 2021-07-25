@@ -8,8 +8,8 @@ const User = mongoose.model(
     password: String,
     accounts: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Account'
+        accountId: String,
+        pub_key: String
       }
     ]
   })
