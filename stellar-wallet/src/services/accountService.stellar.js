@@ -68,7 +68,7 @@ class AccountService {
   getBalance = (pub_key) => {
     return server.loadAccount(pub_key)
       .then((response) => {
-        const res = [response.account_id, response.balances]
+        const res = [response.balances]
         return res
       })
       .catch((err) => {
