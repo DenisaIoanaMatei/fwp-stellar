@@ -3,11 +3,11 @@
 This project folder contains an auth-server folder and an application folder.
 
 ### Start the auth-server
-You can find the [README.md] in the `auth-server` folder.
+You can find the [README.md](https://github.com/DenisaIoanaMatei/fwp-stellar/tree/main/auth-server) in the `auth-server` folder.
 `cd` into `auth-server` and run `node server`. (Works only after you installed all dependencies.)
 
 ### Start the app
-You can find the [README.md] in the `stellar-wallet` folder.
+You can find the [README.md](https://github.com/DenisaIoanaMatei/fwp-stellar/tree/main/stellar-wallet) in the `stellar-wallet` folder.
 Now, `cd` into `stellar-wallet` and run `npm start`. (Works only after you installed all dependencies.)
 
 Open [http://localhost:8081](http://localhost:8081) to view it in the browser.
