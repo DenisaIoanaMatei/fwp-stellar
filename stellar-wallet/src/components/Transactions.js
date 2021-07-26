@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Table, Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import AuthService from '../services/auth.service'
 import '../stylesheets/page-content.css'
 
 export default class Transactions extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -12,69 +12,18 @@ export default class Transactions extends Component {
     }
   }
 
-  render () {
+  render() {
     const { currentUser } = this.state
 
-    async function addExistingStellarAcoount (event) {
-      // await AuthService.logout()
-      window.location.reload()
-    }
-
-    async function createNewStellarAccount (event) {
-      // await AuthService.logout()
-      window.location.reload()
-    }
-
     const accountDetails = (
-      (currentUser.accounts.length === 0)
-        ? (
-          <>
-            <Card id='alert'>
-              <Card.Body>
-                You don't have any Stellar Account connected to your wallet, yet.
-                There's the choice between:
-              </Card.Body>
-            </Card>
-            <Button block size='lg' onClick={addExistingStellarAcoount} className='create-stellar-account-button'>
-              Adding Stellar Account
-            </Button>
-            <p>or</p>
-            <Button block size='lg' onClick={createNewStellarAccount} className='create-stellar-account-button'>
-              Creating Stellar Account
-            </Button>
-          </>
-          )
-        : (
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colSpan='2'>Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </Table>
-          )
+      <>
+        <Card id='alert'>
+          <Card.Body>
+            Work in progress…
+          </Card.Body>
+        </Card>
+      </>
+
     )
 
     return (
@@ -82,7 +31,7 @@ export default class Transactions extends Component {
         <h3>
           <strong>Hi {currentUser.username}</strong> 👋🏼
           <br />
-          These are your account details:
+          On this page you can make your transactions:
         </h3>
         <br />
         <br />
