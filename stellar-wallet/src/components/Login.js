@@ -9,6 +9,9 @@ import '../stylesheets/login.css'
 export default function Login () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [show, setShow] = useState(false)
+  const [statusCode, setStatusCode] = useState('')
+  const [msg, setMsg] = useState('')
   const history = useHistory()
 
   function validateForm () {
