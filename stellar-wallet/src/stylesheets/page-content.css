@@ -16,6 +16,14 @@
       border-width: 2px;
     }
 
+    .modal-content {
+      align-content: center;
+      text-align: center;
+    }
+    .modal-header {
+      justify-content: center;
+    }
+
     #alert {
       color: #B8336A;
       font-weight: bold;
