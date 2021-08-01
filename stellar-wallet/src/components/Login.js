@@ -93,6 +93,14 @@ export default function Login () {
           Login
         </Button>
       </Form>
+      <div>
+        {show
+          ? <VerticallyCenteredModal
+              show={show}
+              onHide={() => setShow(false)}
+            />
+          : <br />}
+      </div>
     </div>
   )
 }
