@@ -44,7 +44,7 @@ class App extends Component {
             ? (
               <Navbar fixed='top'>
                 <Nav className='navbar-nav'>
-                  <Nav.Link href='account'>Account</Nav.Link>
+                  <Nav.Link href='account'>Accounts</Nav.Link>
                   <Nav.Link href='transactions'>Transactions</Nav.Link>
                 </Nav>
                 <div>
