@@ -72,7 +72,7 @@ export default function ContentTable(props) {
 
   return (
     <>
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th>#</th>
@@ -86,7 +86,7 @@ export default function ContentTable(props) {
       </Table>
       <br />
       <br />
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th colSpan="2">Account Id</th>
