@@ -24,8 +24,9 @@ export default function Login () {
       .then(
         (res) => {
           if (res.status !== 200) {
-            alert(res.data.message)
-            window.location.reload()
+            setShow(true)
+            setStatusCode(res.status)
+            setMsg(res.data.message)
           } else {
             history.push('/account')
             window.location.reload()
@@ -34,9 +35,38 @@ export default function Login () {
       )
       .catch(
         (error) => {
-          alert(error)
+          setShow(true)
+          setStatusCode(error.status)
+          setMsg(error.data.message)
         }
       )
+  }
+
+  function VerticallyCenteredModal (props) {
+    return (
+      <Modal
+        {...props}
+        size='sm'
+        aria-labelledby='contained-modal-title-vcenter'
+        centered
+      >
+        <Modal.Header>
+          <Modal.Title id='contained-modal-title-vcenter'>
+            {statusCode}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>{msg}</h4>
+          <p>
+            Please check again if you provided the correct email address
+            and password.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    )
   }
 
   return (
